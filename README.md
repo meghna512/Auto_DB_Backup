@@ -1,7 +1,7 @@
 ## Automatic DB Backup
 
 This is a [Node.js](https://nodejs.org/en/)
- based module which facilitates in automatic DB backup at a specified time.
+ based module which facilitates in automatic [mongodb](https://www.mongodb.com/) backup at a specified time.
 
 ## Installation
 
@@ -25,17 +25,17 @@ app.use(DB_Backup.setBackupTime({
  
  ### Documentation-
 
- * Backup Time: The time at which you want to take backup everyday. It is entered in the cron string format (30 * * * * *) where first field from the left denotes seconds, minutes, hour, day, month, year respectively.
+ * **Backup Time**: The time at which you want to take backup everyday. It is entered in the cron string format (30 * * * * *) where first field from the left denotes seconds, minutes, hour, day, month, year respectively.
 
- * Host: Signifies the host you are using
+ * **Host**: Signifies the host you are using
 
- * Port: The port at which you are using
+ * **Port**: The port at which you are using
 
- * Database Name: Name of the database you want to take backup of
+ * **Database Name**: Name of the database you want to take backup of
 
- * Bucket: S3 bucket name
+ * **Bucket**: S3 bucket name
 
- * Key: AWS API key
+ * **Key**: AWS API key
 
  ### Errors
 
@@ -43,4 +43,4 @@ app.use(DB_Backup.setBackupTime({
 
  ### License
 
- MIT
+[MIT](https://github.com/meghna512/Auto_DB_Backup/blob/master/LICENSE)

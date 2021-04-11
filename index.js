@@ -14,9 +14,8 @@ const setBackupTime = function (config) {
             try {
                 createBackup(config);
             } catch (err) {
-                console.log(err);
+                throw err;
             }
-
         });
     }
 }
@@ -33,8 +32,7 @@ function createBackup(config) {
     console.log("Creating Backup");
     exec(`mongodump --host ${config.host} --port ${config.port} --db ${config.dbName}`, (error, stdout, stderr) => {
         if (error) {
-            console.error(`exec error: ${error}`);
-            return;
+            throw error;
         } else {
             execSync(`zip -r backup *`, {
                 cwd: path.join(__dirname, "./")
@@ -51,19 +49,23 @@ function uploadBackup(config) {
         Key: config.key
     }
     params.Body = fs.readFileSync(path.join(__dirname, "./backup.zip"), 'binary');
-    s3.putObject(params, function(err, data){
-        if(err){
+    s3.putObject(params, function (err, data) {
+        if (err) {
             throw err;
-        }else {
+        } else {
             console.log(`Backup uploaded successfully at ${new Date().toISOString()}`)
         }
-    })
+    });
     cleanUp();
 }
 
-function cleanUp(){
-    fs.unlinkSync(path.join(__dirname, './backup.zip'));
-    fs.rmdirSync(path.join(__dirname, './dump'),{ recursive: true });
+function cleanUp() {
+    try {
+        fs.unlinkSync(path.join(__dirname, './backup.zip'));
+        fs.rmdirSync(path.join(__dirname, './dump'), { recursive: true });
+    }catch(err){
+        throw err;
+    }  
     console.log("Clean Up Done");
 }
 

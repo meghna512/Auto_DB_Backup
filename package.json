@@ -1,10 +1,24 @@
 {
   "name": "db_backup",
   "version": "1.0.0",
-  "description": "",
+  "description": "Facilitates automatic mongodb backup at a specific time",
+  "keywords": [
+    "db backup",
+    "automatic db backup",
+    "mongodb backup"
+  ],
+  "homepage": "https://github.com/meghna512/Auto_DB_Backup",
+  "bugs": {
+    "url": "https://github.com/meghna512/Auto_DB_Backup/issues",
+    "email": "knjmeghna512@gmail.com"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meghna512/Auto_DB_Backup"
   },
   "author": "meghna512",
   "license": "MIT",

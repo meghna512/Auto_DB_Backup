@@ -1,6 +1,6 @@
 {
   "name": "db_backup",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Facilitates automatic mongodb backup at a specific time",
   "keywords": [
     "db backup",

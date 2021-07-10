@@ -1,11 +1,10 @@
 ## Automatic DB Backup
 
-This is a [Node.js](https://nodejs.org/en/)
- based module which facilitates in automatic [mongodb](https://www.mongodb.com/) backup at a specified time.
+This is an [npm module](https://www.npmjs.com/package/db_backup) which facilitates in automatic [mongodb](https://www.mongodb.com/) database backup at a specified time each day, this project uses Amazon S3 Bucket for data storage. It creates mongodump of the data and converts it into a zip file which is uploaded to [Amazon S3 Bucket](https://aws.amazon.com/s3/) and this task is automated using node cron.
 
 ## Installation
 
-`npm install DB_Backup`
+`npm install db_backup`
 
 ## How to use
 
